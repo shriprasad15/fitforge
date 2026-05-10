@@ -23,6 +23,9 @@
     "plugins": [
       "expo-router"
     ],
+    "experiments": {
+      "tsconfigPaths": true
+    },
     "extra": {
       "router": {
         "origin": false
