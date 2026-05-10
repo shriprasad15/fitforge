@@ -6,7 +6,10 @@
     "orientation": "portrait",
     "scheme": "fitforge",
     "userInterfaceStyle": "dark",
-    "platforms": ["ios", "android"],
+    "platforms": [
+      "ios",
+      "android"
+    ],
     "ios": {
       "bundleIdentifier": "com.fitforge.app",
       "supportsTablet": true
@@ -19,6 +22,14 @@
     },
     "plugins": [
       "expo-router"
-    ]
+    ],
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "4d1b78de-55ef-4673-a33a-b9947cdbf491"
+      }
+    }
   }
 }
