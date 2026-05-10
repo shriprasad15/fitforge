@@ -9,6 +9,9 @@ interface RecipeCardProps {
 
 const cuisineColors: Record<string, string> = {
   indian: 'bg-accent-gold/10 text-accent-gold',
+  northIndian: 'bg-accent-gold/10 text-accent-gold',
+  southIndian: 'bg-orange-500/10 text-orange-400',
+  chinese: 'bg-red-500/10 text-red-400',
   continental: 'bg-blue-500/10 text-blue-400',
   mexican: 'bg-accent-coral/10 text-accent-coral',
   thai: 'bg-success/10 text-success',
@@ -71,6 +74,38 @@ export function RecipeCard({ recipe }: RecipeCardProps) {
                 </li>
               ))}
             </ol>
+          </div>
+
+          {/* Side Dish */}
+          {recipe.sideDish && (
+            <div>
+              <p className="text-xs text-text-muted uppercase tracking-wider mb-1">Side Dish: {recipe.sideDish.name}</p>
+              <p className="text-xs text-text-secondary">{recipe.sideDish.recipe}</p>
+            </div>
+          )}
+
+          {/* External Links */}
+          <div className="flex gap-2 flex-wrap">
+            {recipe.youtubeUrl && (
+              <a
+                href={recipe.youtubeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-[10px] px-2.5 py-1 rounded bg-red-500/10 text-red-400 hover:bg-red-500/20 transition-colors"
+              >
+                ▶ YouTube
+              </a>
+            )}
+            {recipe.websiteUrl && (
+              <a
+                href={recipe.websiteUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-[10px] px-2.5 py-1 rounded bg-blue-500/10 text-blue-400 hover:bg-blue-500/20 transition-colors"
+              >
+                ↗ Full Recipe
+              </a>
+            )}
           </div>
         </div>
       )}

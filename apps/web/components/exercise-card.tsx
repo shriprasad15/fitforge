@@ -44,10 +44,42 @@ export function ExerciseCard({ exercise, children }: ExerciseCardProps) {
 
       {expanded && (
         <div className="px-4 pb-4 space-y-3">
+          {/* Exercise images */}
+          {exercise.imageUrl && (
+            <div className="flex gap-2 overflow-x-auto">
+              <img
+                src={exercise.imageUrl}
+                alt={`${exercise.name} demonstration`}
+                className="h-32 rounded-lg object-cover"
+              />
+              {exercise.imageUrl.includes('/0.jpg') && (
+                <img
+                  src={exercise.imageUrl.replace('/0.jpg', '/1.jpg')}
+                  alt={`${exercise.name} end position`}
+                  className="h-32 rounded-lg object-cover"
+                />
+              )}
+            </div>
+          )}
+
           <p className="text-xs text-text-muted italic">{exercise.cue}</p>
+
           {exercise.isSuperset && exercise.supersetWith && (
             <p className="text-xs text-accent-teal">Superset with: {exercise.supersetWith}</p>
           )}
+
+          {/* Video link */}
+          {exercise.videoUrl && (
+            <a
+              href={exercise.videoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-md bg-red-500/10 text-red-400 hover:bg-red-500/20 transition-colors"
+            >
+              <span>▶</span> Watch Form Video
+            </a>
+          )}
+
           {children}
         </div>
       )}

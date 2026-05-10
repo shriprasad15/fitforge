@@ -6,3 +6,4 @@ export * from './hiit';
 export * from './progress';
 export * from './schedule';
 export * from './health';
+export * from './shopping';

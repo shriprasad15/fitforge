@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useAuth } from '@/hooks/use-auth';
 
 const navItems = [
   { href: '/', label: 'Dashboard', icon: '◉' },
@@ -13,10 +14,12 @@ const navItems = [
   { href: '/schedule', label: 'Schedule', icon: '◑' },
   { href: '/health', label: 'Health', icon: '◒' },
   { href: '/recipes', label: 'Recipes', icon: '◓' },
+  { href: '/shopping', label: 'Shopping', icon: '◔' },
 ];
 
 export function Nav() {
   const pathname = usePathname();
+  const { user, signOut } = useAuth();
 
   return (
     <>
@@ -60,6 +63,22 @@ export function Nav() {
             </Link>
           ))}
         </nav>
+        {user && (
+          <div className="p-3 border-t border-white/5">
+            <div className="flex items-center gap-2 mb-2">
+              <div className="w-7 h-7 rounded-full bg-accent-coral/20 flex items-center justify-center text-xs text-accent-coral font-bold">
+                {user.displayName?.[0] || user.email?.[0] || '?'}
+              </div>
+              <span className="text-xs text-text-secondary truncate">{user.displayName || user.email}</span>
+            </div>
+            <button
+              onClick={signOut}
+              className="w-full text-xs py-1.5 px-3 rounded-md bg-red-500/10 text-red-400 hover:bg-red-500/20 transition-colors"
+            >
+              Sign Out
+            </button>
+          </div>
+        )}
       </aside>
     </>
   );

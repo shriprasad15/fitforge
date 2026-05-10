@@ -12,6 +12,10 @@ export default function ProgressPage() {
   const [weight, setWeight] = useState('');
   const [waist, setWaist] = useState('');
   const [arm, setArm] = useState('');
+  const [chest, setChest] = useState('');
+  const [thigh, setThigh] = useState('');
+  const [pushups, setPushups] = useState('');
+  const [energyLevel, setEnergyLevel] = useState(3);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,6 +31,9 @@ export default function ProgressPage() {
     setWeight('');
     setWaist('');
     setArm('');
+    setChest('');
+    setThigh('');
+    setPushups('');
   };
 
   // Build mock session data from weigh-in dates for heatmap
@@ -34,6 +41,11 @@ export default function ProgressPage() {
   weighIns.forEach((w) => {
     sessionDates[w.date] = (sessionDates[w.date] || 0) + 1;
   });
+
+  const startWeight = 70;
+  const targetWeight = 64;
+  const currentWeight = weighIns.length > 0 ? weighIns[weighIns.length - 1].weight : startWeight;
+  const progressPercent = Math.min(100, Math.max(0, ((startWeight - currentWeight) / (startWeight - targetWeight)) * 100));
 
   return (
     <div className="p-4 md:p-6 max-w-2xl mx-auto space-y-4">
@@ -43,16 +55,33 @@ export default function ProgressPage() {
           onClick={() => setShowForm(!showForm)}
           className="text-xs bg-accent-coral hover:bg-accent-coral/90 text-white py-2 px-4 rounded-lg transition-colors"
         >
-          + Weigh In
+          + Log Entry
         </button>
       </div>
 
-      {/* Weigh-in Form */}
+      {/* Goal progress bar */}
+      <div className="bg-bg-card rounded-xl p-4 border border-white/5">
+        <div className="flex items-center justify-between mb-2">
+          <span className="text-xs text-text-muted">Goal: {startWeight}kg → {targetWeight}kg</span>
+          <span className="text-xs font-medium text-accent-teal">{progressPercent.toFixed(0)}%</span>
+        </div>
+        <div className="w-full h-2 bg-bg-elevated rounded-full overflow-hidden">
+          <div
+            className="h-full bg-gradient-to-r from-accent-coral to-accent-teal rounded-full transition-all"
+            style={{ width: `${progressPercent}%` }}
+          />
+        </div>
+        <p className="text-xs text-text-muted mt-1">
+          Current: {currentWeight}kg | To go: {Math.max(0, currentWeight - targetWeight).toFixed(1)}kg
+        </p>
+      </div>
+
+      {/* Log Entry Form */}
       {showForm && (
         <form onSubmit={handleSubmit} className="bg-bg-card rounded-xl p-4 border border-white/5 space-y-3">
           <div className="grid grid-cols-3 gap-3">
             <div>
-              <label className="text-xs text-text-muted block mb-1">Weight (kg)</label>
+              <label className="text-xs text-text-muted block mb-1">Weight (kg)*</label>
               <input
                 type="number"
                 step="0.1"
@@ -84,6 +113,57 @@ export default function ProgressPage() {
                 className="w-full bg-bg-elevated border border-white/10 rounded-lg px-3 py-2 text-sm text-text-primary"
                 placeholder="33"
               />
+            </div>
+            <div>
+              <label className="text-xs text-text-muted block mb-1">Chest (cm)</label>
+              <input
+                type="number"
+                step="0.1"
+                value={chest}
+                onChange={(e) => setChest(e.target.value)}
+                className="w-full bg-bg-elevated border border-white/10 rounded-lg px-3 py-2 text-sm text-text-primary"
+                placeholder="90"
+              />
+            </div>
+            <div>
+              <label className="text-xs text-text-muted block mb-1">Thigh (cm)</label>
+              <input
+                type="number"
+                step="0.1"
+                value={thigh}
+                onChange={(e) => setThigh(e.target.value)}
+                className="w-full bg-bg-elevated border border-white/10 rounded-lg px-3 py-2 text-sm text-text-primary"
+                placeholder="52"
+              />
+            </div>
+            <div>
+              <label className="text-xs text-text-muted block mb-1">Max Push-ups</label>
+              <input
+                type="number"
+                value={pushups}
+                onChange={(e) => setPushups(e.target.value)}
+                className="w-full bg-bg-elevated border border-white/10 rounded-lg px-3 py-2 text-sm text-text-primary"
+                placeholder="20"
+              />
+            </div>
+          </div>
+          <div>
+            <label className="text-xs text-text-muted block mb-1">Energy Level</label>
+            <div className="flex gap-2">
+              {[1, 2, 3, 4, 5].map((level) => (
+                <button
+                  key={level}
+                  type="button"
+                  onClick={() => setEnergyLevel(level)}
+                  className={`flex-1 py-1.5 rounded-lg text-xs font-medium transition-colors ${
+                    energyLevel >= level
+                      ? 'bg-accent-gold/20 text-accent-gold border border-accent-gold/30'
+                      : 'bg-bg-elevated text-text-muted border border-white/5'
+                  }`}
+                >
+                  {level}
+                </button>
+              ))}
             </div>
           </div>
           <button

@@ -25,6 +25,29 @@ export default function SwimPage() {
         <p className="text-sm text-text-secondary leading-relaxed">{plan.breathControlTip}</p>
       </div>
 
+      {/* Video Tutorials */}
+      <div className="bg-bg-card rounded-xl p-4 border border-white/5">
+        <h3 className="text-xs text-text-muted uppercase tracking-wider mb-2">Video Tutorials</h3>
+        <div className="grid grid-cols-2 gap-2">
+          <a href="https://www.youtube.com/watch?v=pFMh2FMwMBY" target="_blank" rel="noopener noreferrer"
+            className="text-xs px-3 py-2 rounded-lg bg-red-500/10 text-red-400 hover:bg-red-500/20 transition-colors text-center">
+            ▶ Flutter Kick
+          </a>
+          <a href="https://www.youtube.com/watch?v=pHCmtJknJHE" target="_blank" rel="noopener noreferrer"
+            className="text-xs px-3 py-2 rounded-lg bg-red-500/10 text-red-400 hover:bg-red-500/20 transition-colors text-center">
+            ▶ Breathing Drill
+          </a>
+          <a href="https://www.youtube.com/watch?v=gh557bAMbas" target="_blank" rel="noopener noreferrer"
+            className="text-xs px-3 py-2 rounded-lg bg-red-500/10 text-red-400 hover:bg-red-500/20 transition-colors text-center">
+            ▶ Arm Pull
+          </a>
+          <a href="https://www.youtube.com/watch?v=JKLfjJf3Qvc" target="_blank" rel="noopener noreferrer"
+            className="text-xs px-3 py-2 rounded-lg bg-red-500/10 text-red-400 hover:bg-red-500/20 transition-colors text-center">
+            ▶ Full Freestyle
+          </a>
+        </div>
+      </div>
+
       {/* Swim Plan Breakdown */}
       <div className="space-y-3">
         {/* Warmup */}
@@ -62,6 +85,11 @@ export default function SwimPage() {
                 </div>
               </div>
               {seg.notes && <p className="text-[10px] text-text-muted mt-0.5">{seg.notes}</p>}
+              {seg.videoUrl && (
+                <a href={seg.videoUrl} target="_blank" rel="noopener noreferrer" className="text-[10px] text-red-400 mt-0.5 inline-block">
+                  ▶ Watch demo
+                </a>
+              )}
             </div>
           ))}
         </div>

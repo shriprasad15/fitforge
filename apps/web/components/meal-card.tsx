@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { Meal } from '@fitforge/shared';
 
 interface MealCardProps {
@@ -36,6 +37,14 @@ export function MealCard({ mealTime, meal, eaten, onToggle }: MealCardProps) {
               <p key={i} className="text-xs text-text-muted">{item}</p>
             ))}
           </div>
+          {meal.prepNotes && (
+            <Link
+              href="/recipes"
+              className="inline-block mt-2 text-[10px] px-2 py-1 rounded bg-accent-coral/10 text-accent-coral hover:bg-accent-coral/20 transition-colors"
+            >
+              View Recipe →
+            </Link>
+          )}
         </div>
         <button
           onClick={onToggle}

@@ -12,6 +12,8 @@ export interface Exercise {
   isSuperset?: boolean;
   supersetWith?: string;
   isPriority?: boolean;
+  imageUrl?: string;
+  videoUrl?: string;
 }
 
 export interface GymDayPlan {

@@ -47,11 +47,14 @@ export interface Snack {
 export interface Recipe {
   id: string;
   name: string;
-  cuisine: 'indian' | 'continental' | 'mexican' | 'thai' | 'mediterranean';
+  cuisine: 'indian' | 'southIndian' | 'northIndian' | 'continental' | 'mexican' | 'thai' | 'mediterranean' | 'chinese';
   calories: number;
   protein: number;
   cookTime: number;
   ingredients: string[];
   steps: string[];
   isBeginnerFriendly: boolean;
+  youtubeUrl?: string;
+  websiteUrl?: string;
+  sideDish?: { name: string; recipe: string };
 }

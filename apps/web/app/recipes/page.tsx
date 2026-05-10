@@ -9,6 +9,9 @@ type CuisineFilter = 'all' | Recipe['cuisine'];
 const cuisines: { key: CuisineFilter; label: string }[] = [
   { key: 'all', label: 'All' },
   { key: 'indian', label: 'Indian' },
+  { key: 'northIndian', label: 'North Indian' },
+  { key: 'southIndian', label: 'South Indian' },
+  { key: 'chinese', label: 'Chinese' },
   { key: 'continental', label: 'Continental' },
   { key: 'mexican', label: 'Mexican' },
   { key: 'thai', label: 'Thai' },
