@@ -29,19 +29,19 @@ export default function SwimPage() {
       <div className="bg-bg-card rounded-xl p-4 border border-white/5">
         <h3 className="text-xs text-text-muted uppercase tracking-wider mb-2">Video Tutorials</h3>
         <div className="grid grid-cols-2 gap-2">
-          <a href="https://www.youtube.com/watch?v=pFMh2FMwMBY" target="_blank" rel="noopener noreferrer"
+          <a href="https://www.youtube.com/results?search_query=swimming+flutter+kick+technique+beginner" target="_blank" rel="noopener noreferrer"
             className="text-xs px-3 py-2 rounded-lg bg-red-500/10 text-red-400 hover:bg-red-500/20 transition-colors text-center">
             ▶ Flutter Kick
           </a>
-          <a href="https://www.youtube.com/watch?v=pHCmtJknJHE" target="_blank" rel="noopener noreferrer"
+          <a href="https://www.youtube.com/results?search_query=swimming+breathing+drill+beginner" target="_blank" rel="noopener noreferrer"
             className="text-xs px-3 py-2 rounded-lg bg-red-500/10 text-red-400 hover:bg-red-500/20 transition-colors text-center">
             ▶ Breathing Drill
           </a>
-          <a href="https://www.youtube.com/watch?v=gh557bAMbas" target="_blank" rel="noopener noreferrer"
+          <a href="https://www.youtube.com/results?search_query=swimming+arm+pull+technique+freestyle+beginner" target="_blank" rel="noopener noreferrer"
             className="text-xs px-3 py-2 rounded-lg bg-red-500/10 text-red-400 hover:bg-red-500/20 transition-colors text-center">
             ▶ Arm Pull
           </a>
-          <a href="https://www.youtube.com/watch?v=JKLfjJf3Qvc" target="_blank" rel="noopener noreferrer"
+          <a href="https://www.youtube.com/results?search_query=freestyle+swimming+beginner+full+stroke" target="_blank" rel="noopener noreferrer"
             className="text-xs px-3 py-2 rounded-lg bg-red-500/10 text-red-400 hover:bg-red-500/20 transition-colors text-center">
             ▶ Full Freestyle
           </a>

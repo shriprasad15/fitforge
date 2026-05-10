@@ -1,256 +1,260 @@
 const IMAGE_BASE = 'https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises';
 
+function searchUrl(exercise: string): string {
+  return `https://www.youtube.com/results?search_query=${encodeURIComponent(exercise + ' proper form how to')}`;
+}
+
 export const exerciseMedia: Record<string, { images: string[]; videoUrl: string }> = {
   'Incline Dumbbell Press': {
     images: [
       `${IMAGE_BASE}/Dumbbell_Incline_Bench_Press/0.jpg`,
       `${IMAGE_BASE}/Dumbbell_Incline_Bench_Press/1.jpg`,
     ],
-    videoUrl: 'https://www.youtube.com/watch?v=8iPEnn-ltC8',
+    videoUrl: searchUrl('Incline Dumbbell Press'),
   },
   'Lateral Raise': {
     images: [
       `${IMAGE_BASE}/Side_Lateral_Raise/0.jpg`,
       `${IMAGE_BASE}/Side_Lateral_Raise/1.jpg`,
     ],
-    videoUrl: 'https://www.youtube.com/watch?v=3VcKaXpzqRo',
+    videoUrl: searchUrl('Dumbbell Lateral Raise'),
   },
   'Seated Dumbbell Overhead Press': {
     images: [
       `${IMAGE_BASE}/Dumbbell_Shoulder_Press/0.jpg`,
       `${IMAGE_BASE}/Dumbbell_Shoulder_Press/1.jpg`,
     ],
-    videoUrl: 'https://www.youtube.com/watch?v=qEwKCR5JCog',
+    videoUrl: searchUrl('Seated Dumbbell Shoulder Press'),
   },
   'Cable Front Raise': {
     images: [
       `${IMAGE_BASE}/Front_Cable_Raise/0.jpg`,
       `${IMAGE_BASE}/Front_Cable_Raise/1.jpg`,
     ],
-    videoUrl: 'https://www.youtube.com/watch?v=sOcYlBI85hU',
+    videoUrl: searchUrl('Cable Front Raise'),
   },
   'Push-ups': {
     images: [
       `${IMAGE_BASE}/Pushups/0.jpg`,
       `${IMAGE_BASE}/Pushups/1.jpg`,
     ],
-    videoUrl: 'https://www.youtube.com/watch?v=IODxDxX7oi4',
+    videoUrl: searchUrl('Push ups perfect form'),
   },
   'Cable Tricep Pushdown (rope)': {
     images: [
       `${IMAGE_BASE}/Triceps_Pushdown_-_Rope_Attachment/0.jpg`,
       `${IMAGE_BASE}/Triceps_Pushdown_-_Rope_Attachment/1.jpg`,
     ],
-    videoUrl: 'https://www.youtube.com/watch?v=2-LAMcpzODU',
+    videoUrl: searchUrl('Rope Tricep Pushdown'),
   },
   'Overhead Tricep Extension (DB)': {
     images: [
       `${IMAGE_BASE}/Dumbbell_One-Arm_Triceps_Extension/0.jpg`,
       `${IMAGE_BASE}/Dumbbell_One-Arm_Triceps_Extension/1.jpg`,
     ],
-    videoUrl: 'https://www.youtube.com/watch?v=YbX7Wd8jQ-Q',
+    videoUrl: searchUrl('Overhead Dumbbell Tricep Extension'),
   },
   'Lat Pulldown (wide grip)': {
     images: [
       `${IMAGE_BASE}/Wide-Grip_Lat_Pulldown/0.jpg`,
       `${IMAGE_BASE}/Wide-Grip_Lat_Pulldown/1.jpg`,
     ],
-    videoUrl: 'https://www.youtube.com/watch?v=CAwf7n6Luuc',
+    videoUrl: searchUrl('Wide Grip Lat Pulldown'),
   },
   'Seated Cable Row': {
     images: [
       `${IMAGE_BASE}/Seated_Cable_Rows/0.jpg`,
       `${IMAGE_BASE}/Seated_Cable_Rows/1.jpg`,
     ],
-    videoUrl: 'https://www.youtube.com/watch?v=GZbfZ033f74',
+    videoUrl: searchUrl('Seated Cable Row'),
   },
   'Single-Arm Dumbbell Row': {
     images: [
       `${IMAGE_BASE}/One-Arm_Dumbbell_Row/0.jpg`,
       `${IMAGE_BASE}/One-Arm_Dumbbell_Row/1.jpg`,
     ],
-    videoUrl: 'https://www.youtube.com/watch?v=roCP6wCXPqo',
+    videoUrl: searchUrl('One Arm Dumbbell Row'),
   },
   'Dumbbell Bicep Curl': {
     images: [
       `${IMAGE_BASE}/Dumbbell_Bicep_Curl/0.jpg`,
       `${IMAGE_BASE}/Dumbbell_Bicep_Curl/1.jpg`,
     ],
-    videoUrl: 'https://www.youtube.com/watch?v=ykJmrZ5v0Oo',
+    videoUrl: searchUrl('Dumbbell Bicep Curl'),
   },
   'Hammer Curl': {
     images: [
       `${IMAGE_BASE}/Hammer_Curls/0.jpg`,
       `${IMAGE_BASE}/Hammer_Curls/1.jpg`,
     ],
-    videoUrl: 'https://www.youtube.com/watch?v=zC3nLlEvin4',
+    videoUrl: searchUrl('Hammer Curl'),
   },
   'Negative Pull-ups': {
     images: [
       `${IMAGE_BASE}/Pullups/0.jpg`,
       `${IMAGE_BASE}/Pullups/1.jpg`,
     ],
-    videoUrl: 'https://www.youtube.com/watch?v=eGo4IYlbE5g',
+    videoUrl: searchUrl('Negative Pull ups beginner'),
   },
   'Plank': {
     images: [
       `${IMAGE_BASE}/Plank/0.jpg`,
       `${IMAGE_BASE}/Plank/1.jpg`,
     ],
-    videoUrl: 'https://www.youtube.com/watch?v=ASdvN_XEl_c',
+    videoUrl: searchUrl('Plank exercise proper form'),
   },
   'Hanging Knee Raises': {
     images: [
       `${IMAGE_BASE}/Hanging_Leg_Raise/0.jpg`,
       `${IMAGE_BASE}/Hanging_Leg_Raise/1.jpg`,
     ],
-    videoUrl: 'https://www.youtube.com/watch?v=Pr1ieGZ5atk',
+    videoUrl: searchUrl('Hanging Knee Raises'),
   },
   'Goblet Squat': {
     images: [
       `${IMAGE_BASE}/Goblet_Squat/0.jpg`,
       `${IMAGE_BASE}/Goblet_Squat/1.jpg`,
     ],
-    videoUrl: 'https://www.youtube.com/watch?v=MeIiIdhvXT4',
+    videoUrl: searchUrl('Goblet Squat dumbbell'),
   },
   'Leg Press': {
     images: [
       `${IMAGE_BASE}/Leg_Press/0.jpg`,
       `${IMAGE_BASE}/Leg_Press/1.jpg`,
     ],
-    videoUrl: 'https://www.youtube.com/watch?v=IZxyjW7MPJQ',
+    videoUrl: searchUrl('Leg Press machine form'),
   },
   'Romanian Deadlift (DB)': {
     images: [
       `${IMAGE_BASE}/Romanian_Deadlift_With_Dumbbells/0.jpg`,
       `${IMAGE_BASE}/Romanian_Deadlift_With_Dumbbells/1.jpg`,
     ],
-    videoUrl: 'https://www.youtube.com/watch?v=jEy_czb3RKA',
+    videoUrl: searchUrl('Dumbbell Romanian Deadlift'),
   },
   'Walking Lunges': {
     images: [
       `${IMAGE_BASE}/Walking_Barbell_Lunge/0.jpg`,
       `${IMAGE_BASE}/Walking_Barbell_Lunge/1.jpg`,
     ],
-    videoUrl: 'https://www.youtube.com/watch?v=L8fvypPrzzs',
+    videoUrl: searchUrl('Walking Lunges'),
   },
   'Calf Raises': {
     images: [
       `${IMAGE_BASE}/Standing_Calf_Raises/0.jpg`,
       `${IMAGE_BASE}/Standing_Calf_Raises/1.jpg`,
     ],
-    videoUrl: 'https://www.youtube.com/watch?v=gwLzBJYoWlI',
+    videoUrl: searchUrl('Standing Calf Raises'),
   },
   'Crunches': {
     images: [
       `${IMAGE_BASE}/Crunches/0.jpg`,
       `${IMAGE_BASE}/Crunches/1.jpg`,
     ],
-    videoUrl: 'https://www.youtube.com/watch?v=Xyd_fa5zoEU',
+    videoUrl: searchUrl('Crunches ab exercise'),
   },
   'Leg Raises': {
     images: [
       `${IMAGE_BASE}/Flat_Bench_Lying_Leg_Raise/0.jpg`,
       `${IMAGE_BASE}/Flat_Bench_Lying_Leg_Raise/1.jpg`,
     ],
-    videoUrl: 'https://www.youtube.com/watch?v=JB2oyawG9KI',
+    videoUrl: searchUrl('Lying Leg Raises'),
   },
   'Bicycle Crunches': {
     images: [
       `${IMAGE_BASE}/Air_Bike/0.jpg`,
       `${IMAGE_BASE}/Air_Bike/1.jpg`,
     ],
-    videoUrl: 'https://www.youtube.com/watch?v=9FGilxCbdz8',
+    videoUrl: searchUrl('Bicycle Crunches'),
   },
   'Arnold Press': {
     images: [
       `${IMAGE_BASE}/Arnold_Dumbbell_Press/0.jpg`,
       `${IMAGE_BASE}/Arnold_Dumbbell_Press/1.jpg`,
     ],
-    videoUrl: 'https://www.youtube.com/watch?v=6Z15_WdXmVw',
+    videoUrl: searchUrl('Arnold Press dumbbell'),
   },
   'Rear Delt Fly': {
     images: [
       `${IMAGE_BASE}/Dumbbell_Rear_Delt_Row/0.jpg`,
       `${IMAGE_BASE}/Dumbbell_Rear_Delt_Row/1.jpg`,
     ],
-    videoUrl: 'https://www.youtube.com/watch?v=EA7u4Q_8HQ0',
+    videoUrl: searchUrl('Rear Delt Fly dumbbell'),
   },
   'Flat Dumbbell Press': {
     images: [
       `${IMAGE_BASE}/Dumbbell_Bench_Press/0.jpg`,
       `${IMAGE_BASE}/Dumbbell_Bench_Press/1.jpg`,
     ],
-    videoUrl: 'https://www.youtube.com/watch?v=VmB1G1K7v94',
+    videoUrl: searchUrl('Flat Dumbbell Bench Press'),
   },
   'Cable Overhead Tricep Extension': {
     images: [],
-    videoUrl: 'https://www.youtube.com/watch?v=YbX7Wd8jQ-Q',
+    videoUrl: searchUrl('Cable Overhead Tricep Extension'),
   },
   'Tricep Dips': {
     images: [
       `${IMAGE_BASE}/Dips_-_Triceps_Version/0.jpg`,
       `${IMAGE_BASE}/Dips_-_Triceps_Version/1.jpg`,
     ],
-    videoUrl: 'https://www.youtube.com/watch?v=wjUmnZH528Y',
+    videoUrl: searchUrl('Tricep Dips'),
   },
   'Lat Pulldown (wide + close)': {
     images: [
       `${IMAGE_BASE}/Wide-Grip_Lat_Pulldown/0.jpg`,
       `${IMAGE_BASE}/Wide-Grip_Lat_Pulldown/1.jpg`,
     ],
-    videoUrl: 'https://www.youtube.com/watch?v=CAwf7n6Luuc',
+    videoUrl: searchUrl('Wide Grip vs Close Grip Lat Pulldown'),
   },
   'Barbell Row': {
     images: [
       `${IMAGE_BASE}/Bent_Over_Barbell_Row/0.jpg`,
       `${IMAGE_BASE}/Bent_Over_Barbell_Row/1.jpg`,
     ],
-    videoUrl: 'https://www.youtube.com/watch?v=FWJR5Ve8bnQ',
+    videoUrl: searchUrl('Bent Over Barbell Row'),
   },
   'Face Pull (cable)': {
     images: [],
-    videoUrl: 'https://www.youtube.com/watch?v=rep-qVOkqgk',
+    videoUrl: searchUrl('Cable Face Pull'),
   },
   'Incline Dumbbell Curl': {
     images: [
       `${IMAGE_BASE}/Incline_Dumbbell_Curl/0.jpg`,
       `${IMAGE_BASE}/Incline_Dumbbell_Curl/1.jpg`,
     ],
-    videoUrl: 'https://www.youtube.com/watch?v=soxrZlIl35U',
+    videoUrl: searchUrl('Incline Dumbbell Curl'),
   },
   'Concentration Curl': {
     images: [
       `${IMAGE_BASE}/Concentration_Curls/0.jpg`,
       `${IMAGE_BASE}/Concentration_Curls/1.jpg`,
     ],
-    videoUrl: 'https://www.youtube.com/watch?v=Jvj2wV0vOYU',
+    videoUrl: searchUrl('Concentration Curl'),
   },
   'Hollow Hold': {
     images: [],
-    videoUrl: 'https://www.youtube.com/watch?v=ASdvN_XEl_c',
+    videoUrl: searchUrl('Hollow Body Hold'),
   },
   'Dead Bug': {
     images: [],
-    videoUrl: 'https://www.youtube.com/watch?v=ASdvN_XEl_c',
+    videoUrl: searchUrl('Dead Bug exercise'),
   },
   'Side Plank': {
     images: [],
-    videoUrl: 'https://www.youtube.com/watch?v=ASdvN_XEl_c',
+    videoUrl: searchUrl('Side Plank exercise'),
   },
   'Spider Curl': {
     images: [],
-    videoUrl: 'https://www.youtube.com/watch?v=soxrZlIl35U',
+    videoUrl: searchUrl('Spider Curl dumbbell'),
   },
   'Cable Lateral Raise': {
     images: [],
-    videoUrl: 'https://www.youtube.com/watch?v=3VcKaXpzqRo',
+    videoUrl: searchUrl('Cable Lateral Raise one arm'),
   },
   'Chest Dip': {
     images: [
       `${IMAGE_BASE}/Dips_-_Chest_Version/0.jpg`,
       `${IMAGE_BASE}/Dips_-_Chest_Version/1.jpg`,
     ],
-    videoUrl: 'https://www.youtube.com/watch?v=wjUmnZH528Y',
+    videoUrl: searchUrl('Chest Dips leaning forward'),
   },
 };
