@@ -1,0 +1,13 @@
+{
+  "name": "fitforge",
+  "private": true,
+  "scripts": {
+    "web": "pnpm --filter @fitforge/web dev",
+    "mobile": "pnpm --filter @fitforge/mobile start",
+    "shared:build": "pnpm --filter @fitforge/shared build",
+    "lint": "pnpm -r lint"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}

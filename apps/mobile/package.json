@@ -1,0 +1,36 @@
+{
+  "name": "@fitforge/mobile",
+  "version": "0.0.1",
+  "private": true,
+  "main": "expo-router/entry",
+  "scripts": {
+    "start": "expo start",
+    "ios": "expo run:ios",
+    "android": "expo run:android",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "expo": "~52.0.0",
+    "expo-router": "~4.0.0",
+    "expo-av": "~14.0.0",
+    "expo-haptics": "~13.0.0",
+    "expo-auth-session": "~6.0.0",
+    "expo-web-browser": "~13.0.0",
+    "react": "18.3.1",
+    "react-native": "0.76.0",
+    "react-native-chart-kit": "^6.12.0",
+    "react-native-svg": "^15.0.0",
+    "react-native-reanimated": "~3.16.0",
+    "react-native-gesture-handler": "~2.20.0",
+    "react-native-safe-area-context": "4.12.0",
+    "react-native-screens": "~4.1.0",
+    "nativewind": "^4.0.0",
+    "firebase": "^11.0.0",
+    "@fitforge/shared": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "@types/react": "^18.3.0",
+    "tailwindcss": "^3.4.0"
+  }
+}
