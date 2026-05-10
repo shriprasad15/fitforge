@@ -1,1 +1,10 @@
 export * from './types';
+export { gymPlan, phase1, phase2, phase3 } from './data/gym-plan';
+export { mealPlan } from './data/meal-plan';
+export { swimPlan } from './data/swim-plan';
+export { hiitProtocols } from './data/hiit-protocols';
+export { scheduleTemplates, dayToTemplate } from './data/schedule-templates';
+export { snacks } from './data/snacks';
+export { recipes } from './data/recipes';
+export { motivationalQuotes } from './data/quotes';
+export { campusEateryGuide, restaurantGuide } from './data/food-guide';
